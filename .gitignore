@@ -1,3 +1,7 @@
+.vscode
+.history
+__pycache__
+
 # User ================================
 #model&tmp
 .idea

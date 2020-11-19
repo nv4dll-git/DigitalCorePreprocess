@@ -132,11 +132,59 @@ def insert(filename):
     ps.io.to_palabos(im,filename)
     plt.show()
 
+def dat2palabos(datname,filename,reversebool=False):
+    '''
+    Read file and return 2 numpy arrays. 
+    Parameters
+    ----------
+    filename : str
+    **reversebool : bool
+        By changing reversebool=True, the user can reverse the meaning of True and False in bool_array
+    Returns
+    ----------
+    bool_array : numpy array, in which True is represent for matrix and False is for porous.
+    ascii_array : numpy array, in which '1' and '2' is represent for matrix and '0' is for porous.
+    '''
+    file = open(datname) #读取dat文件
+    count = 0
+    for index, line in enumerate(open(datname,'r')):
+        count += 1
+    dataslines = file.readlines()
+    row = [ [] for i in range(count) ]
+    for i in range (0,count):
+        row[i] = dataslines[i].split(' ')
+
+    if reversebool is False:
+        for i in range(len(row)):
+            for j in range(len(row[i])):
+                if row[i][j] == '1' or row[i][j] == '2':
+                    row[i][j] = 0
+                else:
+                    row[i][i] = 1
+
+    else:
+        for i in range(len(row)):
+            for j in range(len(row[i])):
+                if row[i][j] == '1' or row[i][j] == '2':
+                    row[i][j] = 1
+                else:
+                    row[i][j] = 0
+    bool_array = np.array(row) #储存row为bool
+
+    outdata = []    
+    for i in range(len(bool_array)):
+        outdata.append(bool_array[i,:])
+
+    ps.io.to_palabos(outdata,filename)
+    plt.imshow(outdata[:,:])
+    plt.show()
+
 if __name__ == '__main__':
 
-    # overlappingspheres(shape=[100,100,100],radius=10,porosity=0.3,filename='100_100_100_30_porosity_test.dat',iter_max=5)
-    # polydispersespheres(shape=[100,100,1],porosity=0.9,loc=5,scale=0.01,nbins= 20,r_min= 5, filename='test.dat')
-    # blobs(shape=[500,500,1],porosity=0.6,blobiness=0.8, filename='blobs_500_500_1.dat')
+    # overlappingspheres(shape=[200,200,1],radius=5,porosity=0.5,filename='100_100_100_30_porosity_test.dat',iter_max=5)
+    # polydispersespheres(shape=[200,200,1],porosity=0.8,loc=8,scale=0.01,nbins= 50,r_min= 1, filename='test.dat')
+    # blobs(shape=[50,50,50],porosity=0.6,blobiness=0.8, filename='blobs_50_50_50.dat')
     # latticespheres(shape=[87,87], radius=8,offset=3,lattice='fcc',filename='latticespheres_87_87_1.dat') #sc fcc bcc 
-    insert('imbibition_170_170_sc.dat')
+    # insert('imbibition_170_170_sc.dat')
+    dat2palabos('flat_surface_2d.dat','flat_surface_new_2.dat',reversebool=False)
 

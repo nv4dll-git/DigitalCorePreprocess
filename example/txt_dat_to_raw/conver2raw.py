@@ -32,19 +32,19 @@ def datreader(filename,reversebool=False):
         for i in range(len(row)):
             for j in range(len(row[i])):
                 if row[i][j] == '1' or row[i][j] == '2':
-                    row[i][j] = True
+                    row[i][j] = 0
                 else:
-                    row[i][j] = False
+                    row[i][j] = 1
     else:
         for i in range(len(row)):
             for j in range(len(row[i])):
                 if row[i][j] == '1' or row[i][j] == '2':
-                    row[i][j] = False
+                    row[i][j] = 1
                 else:
-                    row[i][j] = True
+                    row[i][j] = 0
     bool_array = np.array(row) #储存row为bool
     return bool_array
 
 if __name__ == "__main__":
-    image_array= datreader('example\\txt_model_sample\\model.txt')
-    image_array.tofile('example\\raw_output\\newdata.raw')
+    image_array= datreader('txt_model_sample\\0.7')
+    image_array.tofile('raw_output\\0.7'+'.raw')

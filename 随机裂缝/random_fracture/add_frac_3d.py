@@ -3,7 +3,7 @@ import numpy as np
 import three_d_fracture
 import porespy as ps
 
-def datreader(filename,reversebool=False):
+def datreader(filename,reversebool:bool=False):
     '''
     Read file and return 2 numpy arrays. 
     Parameters
@@ -41,9 +41,9 @@ def datreader(filename,reversebool=False):
     bool_array = np.array(row) #储存row为bool
     return bool_array
 
-def combine(im,im_shape:list,frac_points:object):
+def combine(im:np.array,im_shape:list,frac_points:three_d_fracture.fracture3d):
     """
-    docstring
+    叠加模型
     """
     for i in range(len(frac_points.volume[0])):
         if int(frac_points.volume[0][i]) < 0 or int(frac_points.volume[1][i]) < 0 or int(frac_points.volume[2][i]) < 0 :

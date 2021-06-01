@@ -181,10 +181,10 @@ def dat2palabos(datname,filename,reversebool=False):
 
 if __name__ == '__main__':
 
-    # overlappingspheres(shape=[200,200,1],radius=5,porosity=0.5,filename='100_100_100_30_porosity_test.dat',iter_max=5)
+    overlappingspheres(shape=[200,200,1],radius=5,porosity=0.5,filename='100_100_100_30_porosity_test.dat',iter_max=5)
     # polydispersespheres(shape=[200,200,1],porosity=0.8,loc=8,scale=0.01,nbins= 50,r_min= 1, filename='test.dat')
     # blobs(shape=[50,50,50],porosity=0.6,blobiness=0.8, filename='blobs_50_50_50.dat')
     # latticespheres(shape=[87,87], radius=8,offset=3,lattice='fcc',filename='latticespheres_87_87_1.dat') #sc fcc bcc 
     # insert('imbibition_170_170_sc.dat')
-    dat2palabos('flat_surface_2d.dat','flat_surface_new_2.dat',reversebool=False)
+    # dat2palabos('flat_surface_2d.dat','flat_surface_new_2.dat',reversebool=False)
 

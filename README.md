@@ -25,6 +25,6 @@ Generate rough surface which can be add to digital core dataset.
 ## Author
 Haowei Jia, China University of Petrolume, nv4dll@outlook.com.
 ## TODO
--Fully translation of files.
+- Fully translation of files.
 ## License 
 MIT

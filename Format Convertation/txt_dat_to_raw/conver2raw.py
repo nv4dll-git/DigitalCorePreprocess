@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-'''
-Copyright (C) 2020 JIA Haowei, SWPU
-E-mail : nv4dll@outlook.com
-'''
 
 import numpy as np
 

@@ -1,9 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-'''
-Copyright (C) 2020 JIA Haowei
-E-mail contact: nv4dll@outlook.com
-'''
 import time
 import numpy as np
 import scipy.io

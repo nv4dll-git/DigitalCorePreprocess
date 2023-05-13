@@ -1,3 +1,4 @@
+% Original written by https://github.com/je-santos/MPLBM-UT
 % creates a geometry for simulation
 
 %% opening the file

@@ -4,14 +4,24 @@ This project code can preprocess digital core dataset for digital core analysis 
 ### Digital Core Data Convertation
 - raw data to ASCII data
 - ASCII data to raw data 
+
 Raw data can be load by Avizo for digital core analysis. ASCII data can be load in LBM simulators, such as palabos.
 ### Model Generation
-Generate digital core models by algorithms.
+- Generate digital core models by algorithms.
+- Generate openpnm porous network
 ### Random Fracture and Roughness Surface
 #### Random Fracture modeling
 Add random fractures (random postion, angles) to digital core dataset, support 2D and 3D data.
 #### Rough surface modeling
 Generate rough surface which can be add to digital core dataset.
+## Requirement
+- Python
+- porespy
+- openpnm
+- imageio
+- numpy
+- scipy
+
 ## Author
 Haowei Jia, China University of Petrolume, nv4dll@outlook.com.
 ## TODO
